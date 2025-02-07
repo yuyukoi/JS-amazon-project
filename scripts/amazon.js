@@ -71,6 +71,7 @@ function updateCartQuantity() {
   });
 
   document.querySelector('.cart-quantity').innerHTML = cartQuantity;
+  // console.log(cartQuantity);
 }
 
 document.querySelectorAll('.js-add-to-cart').forEach((button) => {
@@ -79,7 +80,7 @@ document.querySelectorAll('.js-add-to-cart').forEach((button) => {
 
     addToCart(productId);
     updateCartQuantity();
-
+    // console.log(updateCartQuantity());
   });
 });
 
