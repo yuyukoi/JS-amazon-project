@@ -94,6 +94,7 @@ export function renderOrderSummary() {
         container.remove();
 
         renderPaymentSummary();
+        numberItem();
 
       })
     });
@@ -147,5 +148,24 @@ export function renderOrderSummary() {
 
   });
 
+  function numberItem() {
+    let numberHTML = '';
+
+    let cartQuantity = 0;
+    cart.forEach((item) => {
+      cartQuantity += item.quantity;
+    });
+    // console.log(cartQuantity);
+
+    numberHTML += 
+    `
+      Checkout (<a class="return-to-home-link"
+    href="amazon.html">${cartQuantity} items</a>)
+    `;
+
+    document.querySelector('.checkout-header-middle-section').innerHTML = numberHTML;
+  }
+
+  numberItem();
 }
 renderOrderSummary();
