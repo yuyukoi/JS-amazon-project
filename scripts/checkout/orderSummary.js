@@ -89,9 +89,12 @@ export function renderOrderSummary() {
         // console.log(productId);
         removeFromCart(productId);
         // console.log(cart);
-
+        
         const container = document.querySelector(`.js-cart-item-container-${productId}`);
         container.remove();
+
+        renderPaymentSummary();
+
       })
     });
 
