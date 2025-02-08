@@ -1,6 +1,10 @@
-export let cart = JSON.parse(localStorage.getItem('cart')) || [];
+export let cart;
 
+export function loadCart() {
+  cart = JSON.parse(localStorage.getItem('cart')) || [];
+}
 
+loadCart();
 // [{
 //   productId: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
 //   quantity: 2
@@ -11,8 +15,6 @@ export let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 function saveToStorage() {
   localStorage.setItem('cart', JSON.stringify(cart));
-  // console.log(JSON.stringify(cart));
-  // console.log(JSON.parse(localStorage.getItem('cart')));
 }
 
 export function addToCart(productId) {
